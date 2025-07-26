@@ -63,6 +63,3 @@ http://localhost:5173
   npm run dev
   ```
 
----
-
-**Enjoy your modern SIEM dashboard!** 

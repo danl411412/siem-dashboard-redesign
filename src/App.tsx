@@ -5,13 +5,10 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -20,7 +17,6 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import Avatar from '@mui/material/Avatar';
 import InputBase from '@mui/material/InputBase';
 import { styled, alpha } from '@mui/material/styles';
-import Grid from '@mui/material/Grid';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 import KPITiles from './components/KPITiles';
@@ -31,7 +27,6 @@ import AssetPanel from './components/AssetPanel';
 import SearchFilterPanel from './components/SearchFilterPanel';
 
 import MapView from './components/MapView';
-
 
 const drawerWidth = 240;
 
@@ -146,7 +141,7 @@ function App() {
               aria-label="open sidebar"
               edge="start"
               onClick={handleSidebarToggle}
-              sx={{ mr: 2, display: 'none' }} // Hide the old tab
+              sx={{ mr: 2, display: 'none' }}
             >
               <ChevronRightIcon />
             </IconButton>
@@ -169,13 +164,11 @@ function App() {
           <Avatar sx={{ ml: 2, bgcolor: '#4f8cff' }}>A</Avatar>
         </Toolbar>
       </AppBar>
-      {/* Sidebar Drawer */}
       <Box
         component="nav"
         sx={{ width: { sm: sidebarOpen ? drawerWidth : 0 }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-        {/* Mobile Drawer */}
         <Drawer
           variant="temporary"
           open={mobileOpen}
@@ -188,7 +181,6 @@ function App() {
         >
           {drawer}
         </Drawer>
-        {/* Desktop Drawer (collapsible) */}
         <Drawer
           variant="permanent"
           open={sidebarOpen}
@@ -219,7 +211,6 @@ function App() {
           )}
         </Drawer>
       </Box>
-      {/* Floating sidebar open button for mobile */}
       {!sidebarOpen && (
         <IconButton
           color="primary"
@@ -251,7 +242,6 @@ function App() {
         }}
       >
         <Toolbar />
-        {/* Classic dashboard CSS grid layout */}
         <Box
           sx={{
             display: 'grid',
@@ -261,21 +251,18 @@ function App() {
             alignItems: 'start',
           }}
         >
-          {/* Top: KPI Tiles and Search/Filter */}
           <Box sx={{ gridColumn: { xs: '1', md: '1' }, gridRow: '1' }}>
             <KPITiles />
           </Box>
           <Box sx={{ gridColumn: { xs: '1', md: '2' }, gridRow: '1' }}>
             <SearchFilterPanel />
           </Box>
-          {/* Middle: Visualizations and Event Timeline */}
           <Box sx={{ gridColumn: { xs: '1', md: '1' }, gridRow: '2' }}>
             <Visualizations />
           </Box>
           <Box sx={{ gridColumn: { xs: '1', md: '2' }, gridRow: '2' }}>
             <EventTimeline />
           </Box>
-          {/* Bottom: Alert Table and Asset Panel */}
           <Box sx={{ gridColumn: { xs: '1', md: '1' }, gridRow: '3' }}>
             <AlertTable />
           </Box>
