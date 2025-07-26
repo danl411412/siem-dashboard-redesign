@@ -30,6 +30,9 @@ import AlertTable from './components/AlertTable';
 import AssetPanel from './components/AssetPanel';
 import SearchFilterPanel from './components/SearchFilterPanel';
 
+import MapView from './components/MapView';
+
+
 const drawerWidth = 240;
 
 const navItems = [
@@ -280,6 +283,7 @@ function App() {
             <AssetPanel />
           </Box>
         </Box>
+        <MapView />
       </Box>
     </Box>
   );
