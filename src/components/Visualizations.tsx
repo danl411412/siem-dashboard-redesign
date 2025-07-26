@@ -55,7 +55,7 @@ const Visualizations: React.FC = () => (
             {(() => {
               let acc = 0;
               const total = alertDistribution.reduce((sum, a) => sum + a.value, 0);
-              return alertDistribution.map((a, i) => {
+              return alertDistribution.map((a) => {
                 const start = acc;
                 const angle = (a.value / total) * 360;
                 acc += angle;
