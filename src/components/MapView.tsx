@@ -1,8 +1,17 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { mockMapData } from './mockMapData';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 import { useRef } from 'react';
 
 const center: [number, number] = [51.505, -0.09];
+
+// Fix Leaflet's default icon path for production
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: '/marker-icon-2x.png',
+  iconUrl: '/marker-icon.png',
+  shadowUrl: '/marker-shadow.png',
+});
 
 const MapView = () => {
   // Create refs for each marker
